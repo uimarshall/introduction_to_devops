@@ -84,3 +84,65 @@ As well as enabling dev teams to deploy applications quickly and reliably in var
 > Image of SDLC.
 
 ![SDLC Image](images/SDLC_-_Software_Development_Life_Cycle.jpg)
+
+## Introduction to Operating Systems
+
+### What is an Operating System?
+
+An OS is a translator between the programs that runs on our computer and the hardwares that the computer is made up of. It manages a fair usage of resources among the applications that runs on our computer, such as memory allocations. It isolates the content of applications, so that they don't interfere with each others resources.
+
+> Tasks of an Operating System
+
+1. Resource allocation and Management.
+
+   - The CPU handles the Process Management through activity monitoring, allocating a CPU to each process running on the computer.
+
+   - `What is a process?`: This is a small unit that executes on a computer, e.g. is the opening a CLI, opening of a new tab.
+   - Each `Process` has it's own isolated `Space` for it's execution so as not to interfere with other processes running on the computer.
+
+2. Processor Management
+
+3. Device Management
+
+4. File Management
+
+5. User Interface or Command Interpreter
+
+6. Booting the Computer
+
+7. Security
+
+> Components of an Operating System
+
+a. Process management
+b. Files management
+c. Command Interpreter
+d. System calls
+e. Signals
+f. Network management
+g. Security management
+h. I/O device management
+i. Secondary storage management
+j. Main memory management
+
+> Types of Operating Systems
+
+- Windows
+
+- Ubuntu
+
+- Mac Operating system.
+
+> Linux Operating System
+
+## Introduction to Virtualization and Virtual Machines
+
+What is a Server?
+
+A Server is a program or a device that provides functionality for called clients which are other programs or devices.
+
+The concept of Virtualization
+
+What is a Virtual Machine?
+What is a hypervisor?
+Physical Machine vs Virtual Machine
