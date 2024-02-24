@@ -137,12 +137,26 @@ j. Main memory management
 
 ## Introduction to Virtualization and Virtual Machines
 
-What is a Server?
+### What is a Server?
 
-A Server is a program or a device that provides functionality for called clients which are other programs or devices.
+`A Server is a program or a device that provides functionality for called clients which are other programs or devices`.
 
-The concept of Virtualization
+### The concept of Virtualization
 
-What is a Virtual Machine?
-What is a hypervisor?
-Physical Machine vs Virtual Machine
+`Virtualization uses software called hypervisors to create multiple virtual computers (known as virtual machines or VMs) on a single physical machine. These virtual machines can access all the parts of the physical machine, including the computer’s brain or processors, memory and storage`.
+
+`Each virtual machine runs on its own operating system and functions like a completely separate machine—even though it’s sharing the resources of one physical computer`.
+
+### What is a Virtual Machine?
+
+`A virtual machine is a software-based emulation of a physical computer. It allows you to run multiple operating systems on a single physical machine, making it easier to manage and utilize hardware resources efficiently`.
+
+### What is a hypervisor?
+
+`A hypervisor is a software that creates and runs virtual machines (VMs) on a physical host machine. It allows multiple operating systems to run on a single physical machine, effectively partitioning the resources of the host machine between the VMs`.
+
+### Physical Machine vs Virtual Machine
+
+`A physical machine refers to a physical server or computer that runs an operating system directly on its hardware, while a virtual machine refers to a software-based emulation of a physical computer that runs on a physical machine`.
+
+`Virtual machines allow for better resource utilization, easier migration, and isolation of applications, while physical machines offer better performance for certain applications and may be more secure in some cases`.
