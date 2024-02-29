@@ -160,3 +160,110 @@ j. Main memory management
 `A physical machine refers to a physical server or computer that runs an operating system directly on its hardware, while a virtual machine refers to a software-based emulation of a physical computer that runs on a physical machine`.
 
 `Virtual machines allow for better resource utilization, easier migration, and isolation of applications, while physical machines offer better performance for certain applications and may be more secure in some cases`.
+
+## LAMP PROJECT
+
+The aim of this project is to deploy a LAMP project on EC2 instance.
+
+Reference [material](https://www.digitalocean.com/community/tutorials/how-to-install-lamp-stack-on-ubuntu)
+
+### STEPS
+
+> Create AWS account and launch EC2 instance.
+> Add rules and permissions
+> Connect to the EC2 instance to work with the CLI.
+
+### How To Install Linux, Apache, MySQL, PHP (LAMP) Stack on Ubuntu
+
+> Update the package manager cache
+
+`sudo apt update`.
+
+> Install apache
+
+`sudo apt install apache2`
+
+> Once the installation is finished, you’ll need to adjust your firewall settings to allow HTTP traffic.
+
+`sudo ufw app list`
+
+You'll see the below in your terminal if your installation went well:
+
+```
+Available applications:
+  Apache
+  Apache Full
+  Apache Secure
+  OpenSSH
+ubuntu@ip-172-31-45-105:~$
+```
+
+> Next run `sudo ufw allow in "Apache"` - To only allow traffic on port `80`.
+
+> Run `sudo ufw status` to verify the change.
+> Run `sudo systemctl status apache2` to check system is running and active as below:
+
+```
+ubuntu@ip-172-31-45-105:~$ sudo systemctl status apache2
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2024-02-29 19:53:01 UTC; 18min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 2625 (apache2)
+      Tasks: 55 (limit: 1121)
+     Memory: 4.9M
+        CPU: 85ms
+     CGroup: /system.slice/apache2.service
+             ├─2625 /usr/sbin/apache2 -k start
+             ├─2627 /usr/sbin/apache2 -k start
+             └─2628 /usr/sbin/apache2 -k start
+
+Feb 29 19:53:01 ip-172-31-45-105 systemd[1]: Starting The Apache HTTP Server...
+Feb 29 19:53:01 ip-172-31-45-105 systemd[1]: Started The Apache HTTP Server.
+
+```
+
+> Apache up and running Image.
+
+![SDLC Image](images/Apache2-Ubuntu-Default-Page-It-works.png)
+
+### Step 2 — Installing MySQL
+
+> Run `sudo apt install mysql-server`
+
+> Run `sudo systemctl status mysql` to confirm mysql is running.
+> Run `sudo mysql` to open the MySQL prompt.
+> Run `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';` command to change the root user’s authentication method to one that uses a password. Then exit the prompt with `exit` command.
+
+### Step 3 — Installing PHP
+
+> Run `sudo apt install php libapache2-mod-php php-mysql`
+> To Check version; run `php -v` to confirm installation.
+
+```
+ubuntu@ip-172-31-45-105:~$ php -v
+PHP 8.1.2-1ubuntu2.14 (cli) (built: Aug 18 2023 11:41:11) (NTS)
+Copyright (c) The PHP Group
+Zend Engine v4.1.2, Copyright (c) Zend Technologies
+    with Zend OPcache v8.1.2-1ubuntu2.14, Copyright (c), by Zend Technologies
+```
+
+### Step 4 — Creating a Virtual Host for your Website
+
+Run `sudo mkdir /var/www/your_domain`
+
+> The website deployed.
+
+![Html Website Image](images/project_lamp-website.png)
+
+### Step 5 — Testing PHP Processing on your Web Server
+
+create a PHP test script to confirm that Apache is able to handle and process requests for PHP files.
+
+Create a new file named info.php inside your custom web root folder:
+
+> Run `nano /var/www/your_domain/info.php`
+>
+> info.php page.
+
+![Info.php Image](images/PHP-8-1-2-1ubuntu2-14-phpinfo.png)
